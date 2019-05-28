@@ -1,0 +1,18 @@
+<!-- <view>个人主页</view> -->
+<view class='personSecondBar'>
+  <text class='personSecondBarElement active'>我的信息</text>
+  <text class='personSecondBarElement'>我的关注</text>
+</view>
+
+<view class='personInfo'>
+  <image class='personInfoBackground' src='/images/ac.png'></image>
+  <text class='personInfoChangeBackground'>点击上传头像</text>
+  <text class='personInfoEdit'>编辑个人信息</text>
+  <text class='personInfotext'>个人信息blabla</text>
+</view>
+
+<view class='personForcus' hidden='{{true}}'>
+  <image class='personForcusBackground' src='/images/ac_select.png'></image>
+  <text class='personForcusAddArticle'>添加我的关注</text>
+  <text class='personForcustext'>我的关注</text>
+</view>

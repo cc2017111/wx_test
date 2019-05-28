@@ -1,0 +1,43 @@
+.nav-default {
+  color: blue;
+}
+
+.nav-hover {
+  color: red;
+}
+
+.homeMainSwiper {
+  width: 100%;
+}
+
+.homeBackground {
+  width: 100%;
+  height: 50vh;
+}
+
+.mainInfo{
+  display: flex;
+  flex-direction: column;
+}
+
+.mainAppName {
+  text-align: center;
+}
+
+.mainLoginText {
+  text-align: center;
+}
+
+.mainLostText{
+  text-align: center;
+}
+
+.home-swiper {
+  height: 50vh;
+}
+
+.current-swiper {
+  width: 100%;
+  height: 80vh;
+  background: #eee;
+}

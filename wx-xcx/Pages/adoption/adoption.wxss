@@ -1,0 +1,6 @@
+.adoptionMainUI{
+  height: 30%;
+  border: 1px solid #eee;
+  display: flex;
+  justify-content: space-around;
+}

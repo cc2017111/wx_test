@@ -1,0 +1,6 @@
+<!--Pages/selectRole/selectRole.wxml-->
+<text>登陆成功</text>
+<view class='selectRole'>
+  <text class='role'>我是父母</text>
+  <text class='role'>我是孩子</text>
+</view>

@@ -1,0 +1,10 @@
+/* Pages/selectRole/selectRole.wxss */
+.selectRole{
+  display: flex;
+  flex-direction: row;
+}
+
+.selectRole .role{
+  width: 50%;
+  font-weight: bold;
+}

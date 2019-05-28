@@ -1,0 +1,8 @@
+<!-- <view>领养孩子界面</view> -->
+<view class='adoptionMainUI'>
+  <text class='adoptionTitle'>标题</text>
+  <text class="adoptionText">发布单位</text>
+  <text class='adoptionDate'>时间</text>
+</view>
+
+<text class='button' bindtap='loTest'> 跳转按钮</text>

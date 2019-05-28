@@ -1,0 +1,27 @@
+<view class="placeholder"></view>
+
+<view class='homeSecondContainer'>
+  <view class='page_title'>
+    <image class='back' src='/images/back.svg'></image>
+    <text class='info'>今日任务</text>
+  </view>
+  <view class='SeconTab'>
+    <view class='active'>最新动态</view>
+    <view>全部动态</view>
+  </view>
+
+
+  <view class='homeSecondDetail'>
+    <image src='/images/aixin.png' class='wrapper'></image>
+    <text class='publishDate'>2019.5.17</text>
+    <view class='detailTitle'>爱心动态</view>
+    <view class='btn_box'>
+      <view class='btn forcusBtn'>关注</view>
+      <view class='btn colloctionBtn'>收藏</view>
+    </view>
+  </view>
+</view>
+
+<view class='lz'>
+  <text class='lz1'>我是刘哲lz</text>
+</view>

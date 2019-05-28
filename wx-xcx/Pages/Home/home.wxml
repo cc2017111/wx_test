@@ -1,0 +1,33 @@
+<view class='homeBackground'>
+  <swiper class='homeMainSwiper'>
+    <swiper-item wx:for="{{mainSwiperData}}">
+       <image src="{{item.imagePath}}">
+       </image>
+    </swiper-item>
+  </swiper>
+
+<view class='mainInfo'>
+  <text class='mainAppName'>基于人脸识别API的失踪儿童辨识软件</text>
+
+
+  <text class='mainLoginText' bindtap='mainLoginBtn'>点击登录</text>
+</view>
+
+  <view class='mainLostText'>
+    <text>孩子走丢</text>
+    <navigator url='/Pages/AC/ac' style='display: inline;' open-type='switchTab' hover-class='nav-hover' class='nav-default'>点这里</navigator>
+  </view>
+</view>
+
+<view class='container home-swiper'>
+  <text>最新走失儿童信息</text>
+  <swiper class='current-swiper' indicator-dots='{{true}}'>
+    <swiper-item wx:for="{{child_info}}">
+      <view class='container'>
+        <text>年龄：{{item.childAge}}</text>
+        <text>走失地点：{{item.missingPosition}}</text>
+        <image src='{{item.imagePath}}'></image>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
