@@ -1,6 +1,6 @@
 <!--Pages/selectRole/selectRole.wxml-->
-<text>登陆成功</text>
+<view class='subtitle'>欢迎来到宝宝回家小程序</view>
 <view class='selectRole'>
-  <text class='role'>我是父母</text>
-  <text class='role'>我是孩子</text>
+  <text class='role' bindtap='iAmParents'>我是父母</text>
+  <text class='role' bindtap='iAmChildren'>我是孩子</text>
 </view>

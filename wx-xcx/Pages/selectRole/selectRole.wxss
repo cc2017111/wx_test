@@ -1,10 +1,20 @@
 /* Pages/selectRole/selectRole.wxss */
-.selectRole{
-  display: flex;
-  flex-direction: row;
+
+.subtitle {
+  width: 100%;
+  text-align: center;
 }
 
-.selectRole .role{
+.selectRole {
+  height: 90vh;
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectRole .role {
+  text-align: center;
   width: 50%;
+  height: 50%;
   font-weight: bold;
 }

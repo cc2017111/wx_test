@@ -19,6 +19,7 @@
     
     <mappers>
        <mapper resource="mapper/user-mapper.xml"></mapper>
+       <mapper resource="mapper/ac-mapper.xml"></mapper>
     </mappers>
     
 </configuration>

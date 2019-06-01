@@ -5,7 +5,6 @@ Page({
     btnstate: 'default',
     account: '',
     password: '',
-    message: ''
   },
 
   accountInput: function(event) {
@@ -58,11 +57,18 @@ Page({
           });
 
         }else if(message =="用户名或密码不正确"){
-          that.setData({
-            
-          })
+          wx.showToast({
+            title: "失败，用户名或密码不正确",
+            icon: 'none',
+            duration: 2000
+          });
         }
         else{
+          wx.showToast({
+            title: "登录成功",
+            icon: 'success',
+            duration: 2000
+          });
           wx.navigateTo({
             url: '/Pages/selectRole/selectRole',
           })

@@ -1,9 +1,11 @@
 {
   "pages": [
     "Pages/login/login",
-    "Pages/addUser/addUser",
-    "Pages/Home/home",
+    "Pages/mobileAddUser/mobileAddUser",
     "Pages/selectRole/selectRole",
+    "Pages/children/children",
+    "Pages/parents/parents",
+    "Pages/Home/home",
     "Pages/adoption/adoption",
     "Pages/personal/personal",
     "Pages/Home/homeSecond/homeSecond",
