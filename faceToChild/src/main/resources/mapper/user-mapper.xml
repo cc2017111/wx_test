@@ -14,18 +14,18 @@
      -->
      <!-- 通过昵称查找用户 -->
     <select id="findUserByNickname"  resultType="com.xidian.faceToChild.po.User">
-        select id, role, tel, picture, password from user where nickname=#{nickname}
+        select id, role, tel, picture, password, status from user where nickname=#{nickname}
     </select>
     
     <!-- 通过id查找用户 -->
     <select id="findUserById"  resultType="com.xidian.faceToChild.po.User">
-        select id, role, tel, picture, password from user where id=#{id}
+        select id, role, tel, picture, password, status from user where id=#{id}
     </select>
     
     <insert id="addUser"  parameterType="com.xidian.faceToChild.po.User"
  useGeneratedKeys="true"  keyColumn="id"  keyProperty="id">
-    	insert into user(nickname, role, tel, picture, password) values
-    	(#{nickName}, #{role}, #{tel}, #{picture}, #{password})
+    	insert into user(nickname, role, tel, picture, password, status) values
+    	(#{nickName}, #{role}, #{tel}, #{picture}, #{password}, #{status})
     </insert>
     
     <update id="updateUser" parameterType="User">
@@ -36,6 +36,7 @@
     		<if test="role != null">role = #{role},</if>
     		<if test="picture != null">picture = #{picture},</if>
     		<if test="password != null">password = #{password},</if>
+    		<if test="password != null">status = #{status},</if>
     	</set>
     where id =#{id}
     </update>

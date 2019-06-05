@@ -1,13 +1,15 @@
 {
   "pages": [
-    "Pages/login/login",
+    "Pages/z/z",
     "Pages/mobileAddUser/mobileAddUser",
+    "Pages/login/login",
+    "Pages/addNewArticle/addNewArticle",
+    "Pages/Home/home",
+    "Pages/personal/personal",
     "Pages/selectRole/selectRole",
     "Pages/children/children",
     "Pages/parents/parents",
-    "Pages/Home/home",
     "Pages/adoption/adoption",
-    "Pages/personal/personal",
     "Pages/Home/homeSecond/homeSecond",
     "Pages/person/person",
     "Pages/AC/ac"
@@ -15,28 +17,22 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "Pages/Home/home",
+        "pagePath": "Pages/z/z",
         "text": "主页",
-        "iconPath": "Images/home.png",
-        "selectedIconPath": "Images/home_select.png"
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home_select.png"
       },
       {
         "pagePath": "Pages/AC/ac",
         "text": "论坛",
-        "iconPath": "Images/ac.png",
-        "selectedIconPath": "Images/ac_select.png"
+        "iconPath": "/images/ac.png",
+        "selectedIconPath": "/images/ac_select.png"
       },
       {
         "pagePath": "Pages/adoption/adoption",
         "text": "领养孩子",
-        "iconPath": "Images/home.png",
-        "selectedIconPath": "Images/home_select.png"
-      },
-      {
-        "pagePath": "Pages/person/person",
-        "text": "个人主页",
-        "iconPath": "Images/ac.png",
-        "selectedIconPath": "Images/ac_select.png"
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home_select.png"
       }
     ]
   },

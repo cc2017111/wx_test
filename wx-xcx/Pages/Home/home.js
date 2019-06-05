@@ -29,10 +29,10 @@ Page({
     ],
     mainSwiperData: [
       {
-        imagePath: "/Images/home_main.jpg",
+        imagePath: "/images/home_main.jpg",
       },
       {
-        imagePath: "/Images/home_main.jpg",
+        imagePath: "/images/home_main.jpg",
       }
     ],
     indicatorDots: false,

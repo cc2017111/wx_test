@@ -2,6 +2,8 @@ package com.xidian.faceToChild.util;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -51,7 +53,8 @@ public class V {
 				}else if(typeName.equals("java.lang.Double")) {
 					valueSet = Double.parseDouble(value);
 				}else if(typeName.equals("java.util.Date")) {
-					//TODO 转化为日期类型
+					SimpleDateFormat formatter = new SimpleDateFormat( "yyyy-MM-dd ");
+					valueSet = formatter.parse(value);
 				}else {
 					valueSet = dataType.cast(value);
 				}

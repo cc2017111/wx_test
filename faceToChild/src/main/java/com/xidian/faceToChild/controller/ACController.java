@@ -12,15 +12,13 @@ import com.xidian.faceToChild.util.V;
 
 public class ACController {
 	private ACService acservice;
-	private ObjectMapper objectmapper;
 	
 	public ACController() {
 		this.acservice = new ACServicelmpl();
-		this.objectmapper = new ObjectMapper();
 	}
 	
 	public void addMainContext(HttpServletRequest req, HttpServletResponse rep) {
-		String[] params = {"id", "title", "context", "userID"};
+		String[] params = {"title", "context", "userID"};
 		V.valid(req, params);
 		
 		mainContext maincontext = V.entity(req, mainContext.class, params);
@@ -28,7 +26,7 @@ public class ACController {
 	}
 	
 	public void addSubContext(HttpServletRequest req, HttpServletResponse rep) {
-		String[] params = {"id", "title", "context", "userID", "fatherID", "mainID"};
+		String[] params = {"title", "context", "userID", "fatherID", "mainID"};
 		V.valid(req, params);
 		
 		subContext subcontext = V.entity(req, subContext.class, params);

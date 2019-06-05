@@ -1,3 +1,9 @@
+@import 'assets/styles/global.wxss';
+@import 'assets/styles/share.wxss';
+@import 'assets/styles/issue.wxss';
+@import 'assets/styles/user.wxss';
+@import 'assets/styles/search.wxss';
+
 .container {
   background-color: #eee;
   /* 弹性盒子布局 */

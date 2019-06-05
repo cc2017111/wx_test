@@ -7,6 +7,13 @@ public class User {
 	private String tel;
 	private String picture;
 	private String password;
+	private Integer status;
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -48,7 +55,8 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", nickName=" + nickName + ", role=" + role + ", tel=" + tel + ", picture=" + picture
-				+ ", password=" + password + "]";
+				+ ", password=" + password + ", status=" + status + "]";
 	}
 
+	
 }

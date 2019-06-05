@@ -54,7 +54,7 @@ public class UserController {
 	} 
 	
 	public void addUser(HttpServletRequest req, HttpServletResponse resp) {
-		String[] params = {"nick_name", "role", "tel", "picture", "password"};
+		String[] params = {"nick_name", "tel", "picture", "password"};
 		V.valid(req, params);
 
 		User user = V.entity(req, User.class, params);

@@ -1,92 +1,65 @@
-
-const app = getApp();
-
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    user:'',
-    newLetterNumber:0
+    
   },
-  onLoad: function () {
-    this.getPersonalInfo();
-    this.newLetterCount();
-  },
-  onShow:function(){
-    this.newLetterCount();
-  },
-  /**
-   * 获取个人信息
-   */
-  getPersonalInfo(){
 
-    let _this = this;
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
 
-    app.http('get', `/personal_info`, {}, res => {
-      console.log(res.data.data);
-      _this.setData({
-        user:res.data.data
-      })
-    });
-  },
   /**
-   * 获取未读私信数量
+   * 生命周期函数--监听页面初次渲染完成
    */
-  newLetterCount:function(){
-    let _this = this;
+  onReady: function () {
+    
+  },
 
-    app.http('get', `/new_messages`, {}, res => {
-      console.log(res.data.data);
-      _this.setData({
-        newLetterNumber: res.data.data
-      })
-    });
-  },
   /**
-   * 进入消息列表
+   * 生命周期函数--监听页面显示
    */
-  openMessage: function () {
-    wx.navigateTo({
-      url: '/pages/message/message?type=0&new_message=0'
-    })
+  onShow: function () {
+    
   },
+
   /**
-   * 进入私信列表
+   * 生命周期函数--监听页面隐藏
    */
-  openLetter:function(){
-      wx.navigateTo({
-        url: '/pages/friends/friends'
-      })
+  onHide: function () {
+    
   },
+
   /**
-   * 进入建议留言列表
+   * 生命周期函数--监听页面卸载
    */
-  openSugesstion: function () {
-    let id = 4;
-    wx.navigateTo({
-      url: '/pages/letter/letter?friend_id=' + id
-    })
+  onUnload: function () {
+    
   },
+
   /**
-   * 进入表白墙列表
+   * 页面相关事件处理函数--监听用户下拉动作
    */
-  opendPostList:function(){
-    wx.navigateTo({
-      url: '/pages/post_list/post_list'
-    })
+  onPullDownRefresh: function () {
+    
   },
+
   /**
-   * 进入卖舍友列表
+   * 页面上拉触底事件的处理函数
    */
-  openSaleList:function(){
-    wx.navigateTo({
-      url: '/pages/sale_list/sale_list'
-    })
+  onReachBottom: function () {
+    
   },
+
   /**
-   * 进入匹配列表
+   * 用户点击右上角分享
    */
-  openMatchList:function(){
-    wx.navigateTo({
-      url: '/pages/match_list/match_list'
-    })
+  onShareAppMessage: function () {
+    
   }
 })

@@ -45,6 +45,7 @@ public class UserServicelmpl implements UserService {
 	 */
 	public void addUser(User user) {
 		user.setRole(Global.ROLE_USER);
+		user.setStatus(Global.ROLE_STATUS_ON);
 		String encodePwd = Md5Util.encode(user.getPassword());
 		user.setPassword(encodePwd);
 		usermapper.addUser(user);

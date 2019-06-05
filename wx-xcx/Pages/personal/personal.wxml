@@ -1,51 +1,23 @@
-<view class="personal-container">
-
-  <view class="bg-container">
-      <view class='bg-image'>
-        <image mode="aspectFill"      src='http://image.kucaroom.com/30269a739a66831daa31ec93d28318af.jpg'></image>
-      </view>
-      <view>
-        <image class='user-image' src='{{user.avatar}}'></image>
-      </view>
-      <view class='user-info'>
-          <view class='user-name'>{{user.nickname}}</view>
-          <view class='article'>
-            <view class="letter" bindtap="openLetter">
-              <image src="/image/message.png"></image>
-              <view class="letter-item">私信</view>
-              <view class='new-letter' wx:if="{{newLetterNumber != 0}}">
-                ({{newLetterNumber}})
-              </view>
-            </view>
-            <view>|</view>
-            <view class="word">爱情属于勇敢的人儿</view>
-          </view>
-      </view>
+<view class="personal_container">
+  <view class="header">
+     <image src="/images/头像.jpg" class="userImg"></image>
+     <view class="userName">我叫金玉赫</view>
   </view>
-
-  <view class='message' bindtap='openMessage'>
-    <view><image src='/image/my-message.png' class='item-image'></image></view>
-    <view class='word'>消息</view>
+  <view class="flex-wrp" >
+    <image src="/images/信息.png" class="message" ></image>
+    <image src="/images/钱包.png" class="wallent" ></image>
+    <image src="/images/优惠券.png" class="check" ></image>
   </view>
-
-  <view class='content-container'>
-    <view class='content-item say-love' bindtap="opendPostList">
-      <view><image src='/image/color-love.png' class='item-image'></image></view>
-      <view class='word'>表白墙</view>
-    </view>
-    <view class='content-item sale' bindtap="openSaleList">
-      <view><image src='/image/select-sale.png' class='item-image'></image></view>
-      <view class='word'>卖舍友</view>
-    </view>
-    <view class='content-item hide-love' bindtap="openMatchList">
-      <view><image src='/image/color-pipei.png' class='item-image'></image></view>
-      <view class='word'>暗恋匹配</view>
-    </view>
+  <view class="wenzi">
+     <view class="messagename">消息推送</view>
+     <view class="wallentname">我的关注</view>
+     <view class="checkname">历史记录</view>
   </view>
-
-  <view class='suggestion' bindtap='openSugesstion'>
-    <view><image src='/image/suggestion.png' class='item-image'></image></view>
-    <view class='word'>意见反馈</view>
+  <view class="content">
+    <view class="shoucang">我的收藏</view>
+    <view class="coupon">最近浏览</view>
+    <view class="address">我的地址</view>
+    <view class="tel">联系电话: 588325697</view>
+    <view class="signOut">退出登录</view>
   </view>
-
 </view>
