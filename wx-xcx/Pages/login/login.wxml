@@ -13,7 +13,7 @@
       <input bindinput="pwdBlur" placeholder="请输入密码" password="{{true}}" placeholder-style="color:#999;" />
     </view>
     <view class="see">
-      <image src="../images/see.jpg" style="width:42px; height:30px;" />
+      
     </view>
   </view>
   <view class="hr"></view>

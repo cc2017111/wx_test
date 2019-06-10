@@ -19,7 +19,7 @@ public class UploadFileServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String[] params = {"desc", "file_type"};
+		String[] params = {"file_desc", "type"};
 		V.valid(req, params);
 		Part part = req.getPart("file");
 		String type = part.getContentType();

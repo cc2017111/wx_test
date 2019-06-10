@@ -1,6 +1,7 @@
 package com.xidian.faceToChild.controller;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -53,8 +54,9 @@ public class UserController {
 		return map;
 	} 
 	
-	public void addUser(HttpServletRequest req, HttpServletResponse resp) {
-		String[] params = {"nick_name", "tel", "picture", "password"};
+	public void addUser(HttpServletRequest req, HttpServletResponse resp) throws UnsupportedEncodingException {
+		String[] params = {"nick_name", "tel", "password"};
+		System.out.println(req.getParameter("nick_name"));
 		V.valid(req, params);
 
 		User user = V.entity(req, User.class, params);
@@ -82,7 +84,7 @@ public class UserController {
 	public void updateUser(HttpServletRequest req, HttpServletResponse resp) {
 		String[] mustParam = {"id"};
 		V.valid(req, mustParam);
-		String[] params ={"id", "nick_name", "role", "tel", "picture", "password"};
+		String[] params ={"id", "nick_name", "role", "tel", "password"};
 		User user = V.entity(req, User.class, params);
 		
 		userservice.updateUser(user);

@@ -20,6 +20,8 @@ public class WhiteFilter implements MyFilter {
 		WhiteList = new ArrayList<String>();
 		WhiteList.add("user/login");
 		WhiteList.add("user/addUser");
+		WhiteList.add("file/found_AC_picture");
+		WhiteList.add("AC/list");
 	}
 
 	public void doFilter(HttpServletRequest req, HttpServletResponse resp, MyFilterChain chain) {

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
+ -->
+<mapper namespace="com.xidian.faceToChild.mapper.MediaMapper">
+    <!-- 在select标签中编写查询的SQL语句， 设置select标签的id属性为getUser，id属性值必须是唯一的，不能够重复
+    使用parameterType属性指明查询时使用的参数类型，resultType属性指明查询返回的结果集类型
+    resultType="me.gacl.domain.User"就表示将查询结果封装成一个User类的对象返回
+    User类就是users表所对应的实体类
+    --> 
+    <!-- 根据用户id查找用户头像 -->
+    <resultMap type="Media" id="baseMediaMap">
+	    <id column="id" property="id"/>
+	    <result column="file_desc" property="fileDesc"/>
+	    <result column="url" property="url"/>
+	    <result column="type" property="type"/>
+	    <result column="create_time" property="createtime"/>
+    
+    </resultMap>
+    
+    <resultMap type="ACPicture" id="baseACPicture">
+	    <id column="id" property="id"/>
+	    <result column="file_desc" property="fileDesc"/>
+	    <result column="url" property="url"/>
+	    <result column="type" property="type"/>
+	    <result column="from_ac" property="fromAC"/>
+	    <result column="create_by_user" property="createByUser"/>
+    
+    </resultMap>
+    <select id="findMediaByUserId"  resultMap="baseMediaMap">
+        select file_desc, url, type, create_time from tb_media where create_by=#{userid}
+        
+    </select>
+    
+    <select id="findPictureByMainContextId"  resultMap="baseACPicture">
+        select id, file_desc, url, type, create_by_user from tb_media_ac where from_ac=#{fromAC}
+        
+    </select>
+    
+    <insert id="insert"  parameterType="com.xidian.faceToChild.po.Media"
+ useGeneratedKeys="true"  keyColumn="id"  keyProperty="id">
+    	insert into tb_media(file_desc, url, create_by, type) values
+    	(#{fileDesc}, #{url}, #{user.id}, #{type})
+    </insert>
+    
+    <insert id="insertACPicture"  parameterType="com.xidian.faceToChild.po.ACPicture"
+ useGeneratedKeys="true"  keyColumn="id"  keyProperty="id">
+    	insert into tb_media_ac(from_ac, file_desc, url, create_by_user, type) values
+    	(#{fromAC}, #{fileDesc}, #{url}, #{createByUser}, #{type})
+    </insert>
+    
+</mapper>

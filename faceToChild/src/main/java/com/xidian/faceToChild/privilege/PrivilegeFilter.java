@@ -38,6 +38,10 @@ public class PrivilegeFilter implements MyFilter {
 		users.add("user/delete");
 		users.add("AC/add_sub_context");
 		users.add("AC/add_main_context");
+		users.add("file/upload");
+		users.add("file/found");
+		users.add("file/add_AC_picture");
+		
 	}
 
 	public void doFilter(HttpServletRequest req, HttpServletResponse resp, MyFilterChain chain) {

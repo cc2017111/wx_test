@@ -2,14 +2,14 @@ package com.xidian.faceToChild.po;
 
 public class mainContext {
 
-	private Integer id;
+	private Long id;
 	private String title;
 	private String context;
-	private String userID;
-	public Integer getId() {
+	private Integer userID;
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getTitle() {
@@ -24,15 +24,15 @@ public class mainContext {
 	public void setContext(String context) {
 		this.context = context;
 	}
-	public String getUserID() {
+	public Integer getUserID() {
 		return userID;
 	}
-	public void setUserID(String userID) {
+	public void setUserID(Integer userID) {
 		this.userID = userID;
 	}
 	@Override
 	public String toString() {
 		return "mainContext [id=" + id + ", title=" + title + ", context=" + context + ", userID=" + userID + "]";
 	}
-	
+
 }

@@ -4,22 +4,45 @@
 例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
  -->
 <mapper namespace="com.xidian.faceToChild.mapper.ACMapper">
+	<!--建立Mapper  -->
+	<resultMap type="mainContext" id="baseMainContext">
+		<id column = "id" property = "id"/>
+		<result column = "title" property="title"/>
+		<result column = "context" property="context"/>
+		<result column = "userID" property="userID"/>
+	</resultMap>
     <!-- 在select标签中编写查询的SQL语句， 设置select标签的id属性为getUser，id属性值必须是唯一的，不能够重复
     使用parameterType属性指明查询时使用的参数类型，resultType属性指明查询返回的结果集类型
     resultType="me.gacl.domain.User"就表示将查询结果封装成一个User类的对象返回
     User类就是users表所对应的实体类
     -->
-    <!-- 
-        根据id查询得到一个user对象
-     -->
-     <!-- 通过昵称查找用户 -->
-    <select id="findUserByNickname"  resultType="com.xidian.faceToChild.po.User">
-        select id, role, tel, picture, password from user where nickname=#{nickname}
+    
+     <!-- 通过关键字查找文章，返回符合条件的的数量 -->
+    <select id="getMainContextByKeywordCount"  resultType="int">
+    <bind name= "keywords" value = "'%' + keyword + '%'"></bind>
+        select count(*)from main_context_info 
+        <where>
+        	<if test="keyword != ''">
+        		title like #{keywords} or
+        		context like #{keywords} or
+        		userID like #{keywords}
+        	</if>
+        </where>
     </select>
     
-    <!-- 通过id查找用户 -->
-    <select id="findUserById"  resultType="com.xidian.faceToChild.po.User">
-        select id, role, tel, picture, password from user where id=#{id}
+    <!-- 通过关键字查找文章，返回符合条件的的文章数据 -->
+    <select id="getMainContextByKeyword"  resultMap="baseMainContext">
+    	<bind name= "keywords" value = "'%' + keyword + '%'"></bind>
+        select id, title, context, userID from main_context_info
+        <where>
+        	<if test="keyword != ''">
+        		title like #{keywords} or
+        		context like #{keywords} or
+        		userID like #{keywords}
+        	</if>
+        </where>
+        
+        limit #{begin},#{pageSize}
     </select>
     
     <insert id="addNewMainContext"  parameterType="com.xidian.faceToChild.po.mainContext"
@@ -30,8 +53,8 @@
     
     <insert id="addNewSubContext"  parameterType="com.xidian.faceToChild.po.subContext"
  useGeneratedKeys="true"  keyColumn="id"  keyProperty="id">
-    	insert into sub_context_info(id, title, context, userID, fatherID, mainID) values
-    	(#{id}, #{title}, #{context}, #{userID}, #{fatherID}, #{mainID})
+    	insert into sub_context_info(title, context, userID, fatherID, mainID) values
+    	(#{title}, #{context}, #{userID}, #{fatherID}, #{mainID})
     </insert>
     
     <update id="updateUser" parameterType="User">

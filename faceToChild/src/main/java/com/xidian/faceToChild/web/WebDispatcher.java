@@ -6,10 +6,14 @@ import java.lang.reflect.Method;
 
 import javax.management.ReflectionException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xidian.faceToChild.exception.BaseException;
@@ -28,7 +32,9 @@ import com.xidian.faceToChild.util.NameUtil;
  *
  */
 @WebServlet("/app/*")
+@MultipartConfig
 public class WebDispatcher extends HttpServlet {
+	private Logger log = LogManager.getLogger(WebDispatcher.class);
 	public static final String PROJECT_NAME = "/faceToChild/";
 	public static final String SUB_NAME = "app/";
 	private static final String PACJAGE_NAME = "com.xidian.faceToChild.controller";
@@ -37,6 +43,8 @@ public class WebDispatcher extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		req.setCharacterEncoding("UTF-8");
+		resp.setCharacterEncoding("UTF-8");
 		// 获取用户的请求地址
 		String uri = req.getRequestURI();
 		// 去掉路径中的项目名称
@@ -59,10 +67,16 @@ public class WebDispatcher extends HttpServlet {
 		chain.addFilter(whiteListFilter).addFilter(loginFilter).addFilter(privilegeFiter);
 
 		ApiResult apiresult = new ApiResult();
-		
+
 		try {
 			chain.doFilter(req, resp);
-			
+
+			// 如果是多媒体类型设置上传目录的路径： 服务器的根路径
+			if (req.getHeader("content-type") != null && req.getHeader("content-type").startsWith("multipart")) {
+				String uploadDir = this.getServletContext().getRealPath("/");
+				log.info("设置文件上传路径..." + uploadDir);
+				req.setAttribute("upload_path", uploadDir);
+			}
 			// 使用/分割字符串 结果是数组
 			String[] reqUri = uri.split("/");
 			if (reqUri.length < 2) {

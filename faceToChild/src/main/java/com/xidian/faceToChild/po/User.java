@@ -5,22 +5,14 @@ public class User {
 	private String nickName;
 	private String role;
 	private String tel;
-	private String picture;
 	private String password;
 	private Integer status;
-	public Integer getStatus() {
-		return status;
-	}
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 	public String getNickName() {
 		return nickName;
 	}
@@ -39,24 +31,22 @@ public class User {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	public String getPicture() {
-		return picture;
-	}
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
-		
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", nickName=" + nickName + ", role=" + role + ", tel=" + tel + ", picture=" + picture
-				+ ", password=" + password + ", status=" + status + "]";
+		return "User [id=" + id + ", nickName=" + nickName + ", role=" + role + ", tel=" + tel + ", password="
+				+ password + ", status=" + status + "]";
 	}
 
-	
 }

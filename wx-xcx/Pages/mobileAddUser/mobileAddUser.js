@@ -57,11 +57,10 @@ Page({
     console.log(e);
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/faceToChild/user/addUser',
+      url: 'http://localhost:8080/faceToChild/app/user/addUser',
       data: {
         tel: that.data.tel,
         nick_name: that.data.nick_name,
-        picture: "/images/ac.png",
         password: that.data.password,
         role: that.data.role
       },

@@ -1,23 +1,24 @@
-// Pages/addNewArticle/addNewArticle.js
-/* Pages/addNewArticle/addNewArticle.wxss */
-// pages/course/addNewArticle/addNewArticle.js
+let app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    id: "",
     title: "",
     context: "",
     tempFilePaths: ""
   },
   titleblur: function(e) {
+    // console.log(e);
     var title = e.detail.value.trim();
     if (title !== null) {
       this.setData({
         title: title
       });
-      console.log(title);
+      console.log(this.data.title);
     }
   },
   contextblur: function(e) {
@@ -43,6 +44,7 @@ Page({
             tempFilePaths: this.data.tempFilePaths.concat(tempFilePaths)
           })
         }
+        console.log(tempFilePaths);
       }
     })
   },
@@ -60,18 +62,22 @@ Page({
 
   submit: function(e) {
     console.log(e);
+    this.setData({
+      id: Date.parse(new Date())
+    })
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/faceToChild/AC/add_main_context',
+      url: 'http://localhost:8080/faceToChild/app/AC/add_main_context',
       data: {
-        id: 10,
+        id: that.data.id,
         title: that.data.title,
         context: that.data.context,
-        userID: 10000
+
       },
       method: 'POST',
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'cookie': getApp().globalData.cookie
       },
       success: function(res) {
         console.log(res.data);
@@ -90,22 +96,56 @@ Page({
             icon: 'none',
             duration: 2000
           })
-        } else if(message == "success") {
+        } else if (message == "success") {
           wx.showToast({
             title: "发表成功",
             icon: 'success',
             duration: 2000
-          })
-          wx.navigateBack({
-            url: '/Pages/login/login'
-          })
+          });
+          wx.uploadFile({
+            url: 'http://localhost:8080/faceToChild/app/file/add_AC_picture',
+            filePath: that.data.tempFilePaths[0],
+            header: {
+              'cookie': getApp().globalData.cookie
+            },
+            formData: {
+              from_AC: that.data.id,
+              file_desc: "luntan",
+              type: "1"
+            },
+            name: 'file',
+            success: function(picres) {
+              console.log(picres);
+              var picUploadMessage = JSON.parse(picres.data).msg;
+              console.log(picUploadMessage);
+              if (picUploadMessage == null) {
+                var toastText = "网络异常";
+                wx.showToast({
+                  title: toastText,
+                  icon: 'none',
+                  duration: 2000
+                })
+
+              } else if (picUploadMessage == "程序内部错误") {
+                wx.showToast({
+                  title: "上传图片失败",
+                  icon: 'none',
+                  duration: 2000
+                })
+              } else if (picUploadMessage == "success") {
+                wx.showToast({
+                  title: "上传图片成功",
+                  icon: 'success',
+                  duration: 2000
+                });
+                wx.navigateBack({
+                  delta: 1
+                });
+              }
+            }
+          });
         }
       }
     })
   }
-})
-wx.uploadFile({
-  url: '',
-  filePath: '',
-  name: '',
 })
