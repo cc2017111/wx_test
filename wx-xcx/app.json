@@ -1,6 +1,7 @@
 {
   "pages": [
     "Pages/z/z",
+    "Pages/a/a",
     "Pages/mobileAddUser/mobileAddUser",
     "Pages/login/login",
     "Pages/addNewArticle/addNewArticle",

@@ -7,6 +7,7 @@ Page({
     page_num: "1",
     page_size: '2',
     keyword: '',
+    currentMainId:'',
     info_list: [],
     info_list_is_not_empty: false,
     info_list_len: 0,
@@ -52,6 +53,14 @@ Page({
     wx.navigateTo({
       url: '/Pages/addNewArticle/addNewArticle',
     })
+  },
+  toDetail: function(e) {
+    var mainId = e.currentTarget.id
+    console.log(mainId);
+    wx.navigateTo({
+      url: '/Pages/a/a?mainId=' + mainId,
+    })
+    
   },
 
   getACData: function(arr, res, i) {

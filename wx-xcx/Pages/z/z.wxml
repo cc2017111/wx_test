@@ -70,7 +70,7 @@
         <block wx:if="{{info_list_is_not_empty}}">
           <block wx:for="{{info_list}}" wx:for-index="idx" wx:for-item="item">
             <view class="share-item-box" data-index="{{idx}}">
-              <view class="share-item" bindtap="toDetail" data-index="{{idx}}">
+              <view class="share-item" catchtap="toDetail" id="{{item.id}}">
                 <view class="share-source">
                   <view class="share-userinfo" catchtap="userHeadTap" data-ggid="{{item.userID}}">
                     <view class="u-head">

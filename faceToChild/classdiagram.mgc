@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="com.xidian.faceToChild.util.Md5Util" x="1322" y="1053">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.util.SessionManager" x="802" y="469">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.exception.NoPrivilegeException"
+        x="1616" y="936">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.xidian.faceToChild.exception.BaseException"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.mapper.ACMapper" x="200" y="1424">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.controller.UserController"
+        x="1078" y="547">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.xidian.faceToChild.service.UserService"
+            endpointName="userservice" kind="Simple"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.SessionManager"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.V"/>
+        <Communication destinationClassName="com.xidian.faceToChild.service.UserService"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.web.ReqListen" x="1137" y="272">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.D"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.po.subContext" x="379" y="1566">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.po.Media" x="1353" y="1570">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.xidian.faceToChild.po.User"
+            endpointName="user" kind="Simple"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.privilege.PrivilegeFilter"
+        x="-55" y="360">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.xidian.faceToChild.web.MyFilter"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.SessionManager"/>
+        <Communication destinationClassName="com.xidian.faceToChild.web.MyFilterChain"/>
+        <Communication destinationClassName="com.xidian.faceToChild.po.User"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.web.UploadFileServlet" x="554" y="696">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.V"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.service.UserServicelmpl"
+        x="1201" y="939">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.xidian.faceToChild.service.UserService"/>
+        <Association
+            destinationClassName="com.xidian.faceToChild.mapper.UserMapper"
+            endpointName="usermapper" kind="Simple"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.Md5Util"/>
+        <Communication destinationClassName="com.xidian.faceToChild.mapper.UserMapper"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.D"/>
+        <Communication destinationClassName="com.xidian.faceToChild.po.User"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.util.MediaValid" x="601" y="1141">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.web.MyFilter" x="391" y="228">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.web.ApiResult" x="874" y="259">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.service.FileService" x="731" y="761">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.service.ACService" x="216" y="770">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.controller.ACController" x="54" y="570">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.xidian.faceToChild.service.ACService"
+            endpointName="acservice" kind="Simple"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.V"/>
+        <Communication destinationClassName="com.xidian.faceToChild.po.mainContext"/>
+        <Communication destinationClassName="com.xidian.faceToChild.service.ACService"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.web.WebDispatcher" x="549" y="462">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.xidian.faceToChild.web.MyFilterChain"/>
+        <Communication destinationClassName="com.xidian.faceToChild.web.ApiResult"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.NameUtil"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.po.ACPicture" x="-20" y="1562">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.service.ACServicelmpl" x="128" y="954">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.xidian.faceToChild.service.ACService"/>
+        <Association
+            destinationClassName="com.xidian.faceToChild.mapper.ACMapper"
+            endpointName="acmapper" kind="Simple"/>
+        <Communication destinationClassName="com.xidian.faceToChild.mapper.ACMapper"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.D"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.web.MyFilterChain" x="433" y="355">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.xidian.faceToChild.web.MyFilter"
+            endpointName="filterChains" kind="Simple"/>
+        <Communication destinationClassName="com.xidian.faceToChild.web.MyFilter"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.util.V" x="1888" y="630">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.NameUtil"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.mapper.MediaMapper" x="716" y="1414">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.web.Page" x="1017" y="248">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.privilege.LoginFilter" x="-62" y="226">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.xidian.faceToChild.web.MyFilter"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.SessionManager"/>
+        <Communication destinationClassName="com.xidian.faceToChild.web.MyFilterChain"/>
+        <Communication destinationClassName="com.xidian.faceToChild.po.User"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.service.FileServicelmpl" x="624" y="936">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.xidian.faceToChild.service.FileService"/>
+        <Association
+            destinationClassName="com.xidian.faceToChild.mapper.MediaMapper"
+            endpointName="mediamapper" kind="Simple"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.MediaValid"/>
+        <Communication destinationClassName="com.xidian.faceToChild.mapper.MediaMapper"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.D"/>
+        <Communication destinationClassName="com.xidian.faceToChild.po.Media"/>
+        <Communication destinationClassName="com.xidian.faceToChild.po.ACPicture"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.exception.InvalidParamException"
+        x="1457" y="706">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.xidian.faceToChild.exception.BaseException"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.util.Global" x="1875" y="956">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.exception.BaseException"
+        x="1680" y="378">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.po.mainContext" x="184" y="1584">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.util.imageUtil" x="856" y="699">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.util.E" x="1890" y="852">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.util.NameUtil" x="1875" y="1058">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.mapper.UserMapper" x="1235" y="1403">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.util.D" x="1884" y="736">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.privilege.WhiteFilter" x="-62" y="93">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.xidian.faceToChild.web.MyFilter"/>
+        <Communication destinationClassName="com.xidian.faceToChild.web.MyFilterChain"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.controller.FileController"
+        x="557" y="554">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.xidian.faceToChild.service.FileService"
+            endpointName="fileservice" kind="Simple"/>
+        <Communication destinationClassName="com.xidian.faceToChild.util.V"/>
+        <Communication destinationClassName="com.xidian.faceToChild.service.FileService"/>
+        <Communication destinationClassName="com.xidian.faceToChild.po.Media"/>
+        <Communication destinationClassName="com.xidian.faceToChild.po.ACPicture"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.po.User" x="984" y="1553">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.xidian.faceToChild.service.UserService" x="1246" y="748">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+</ClassDiagram>
